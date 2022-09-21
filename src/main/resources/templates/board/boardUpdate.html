@@ -1,0 +1,38 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시글 내용</title>
+
+<th:block th:include="common/header/commonHead"></th:block>
+<th:block th:include="common/header/boardHead"></th:block>
+
+</head>
+<body>
+	<div th:each = "i : ${boardRead}">
+		<input id="board_id" type="hidden" th:value="${i.boardId}">
+		<div class="boardReadTitle">
+		<div class="boardReadTitleText">
+			<input class="w-800" type="text" th:value="${i.boardTitle}" id="board_title"/>
+		</div>
+				<div class="boardReadTitleSub">
+					<div th:text = "${i.boardWriter}" ></div>
+					<div th:text = "${i.board_reg_date}"></div>
+				</div>
+		</div>	
+		<div class="boardReadContent"> 
+			<textarea th:text="${i.boardContent}" id="board_content"></textarea>
+		</div>
+		
+		
+		<div id="readBtnGroup">
+		<button type="button" onclick="location.href='/board/boardList'" > 목록으로 </button>
+		<button id="editBtn" > 수정 </button>
+		<button id="deleteBtn"> 삭제 </button>
+		
+	</div>
+	
+	</div>
+	
+</body>
+</html> -->

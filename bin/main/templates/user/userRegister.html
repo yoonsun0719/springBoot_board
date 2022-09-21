@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+
+<th:block th:include="common/header/commonHead"></th:block>
+<th:block th:include="common/header/userHead"></th:block>
+
+</head>
+<body class="userBody">
+	<!-- TopBar 불러오기 -->
+	<th:block th:include="common/topBar"></th:block>
+	
+	<div class="userArea">
+		<div class="borderSet pa-tb-px20">
+			<div class="row" style="display:none">
+				<div class="userLabel">유저고유번호</div>
+				<input class="w-300" type="text" id="user_id">
+			</div>
+			<div class="row">
+				<div class="userLabel">아이디</div>
+				<input class="w-300" type="text" id="user_nickname">
+			</div>
+			<div class="row">
+				<div class="userLabel">비밀번호</div>
+				<input class="w-300" type="text" id="user_pw">
+			</div>
+			<div class="row">
+				<div class="userLabel">비번확인</div>
+				<input class="w-300" type="text">
+			</div>
+			<div class="row">
+				<div class="userLabel">이름</div>
+				<input class="w-300" type="text" id="user_name">
+			</div>
+			<div class="row">
+				<div class="userLabel">이메일</div>
+				<input class="w-300" type="text" id="user_email">
+			</div>
+			<div class="row">
+				<div class="userLabel">주소</div>
+				<input class="w-300" type="text" id="user_addr_1">
+			</div>
+			<div class="row">
+				<div class="userLabel">상세주소</div>
+				<input class="w-300" type="text" id="user_addr_2">
+			</div>
+			<div class="row">
+				<div class="userLabel">핸드폰</div>
+				<input class="w-300" type="text" id="user_tel">
+			</div>
+			<div class="row">
+				<div class="userLabel">반려동물</div>
+				<div class="userRadio ju-sp-a al-it-c">
+					<div>
+						<input type="radio" name="user_pet_type" value="D">강아지
+					</div>
+					<div>
+						<input type="radio" name="user_pet_type" value="C">고양이
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<button class="userBtn w-500 ma-t-px50" id="regCommit" type="button">회원가입</button>
+			</div>
+			<div class="row">
+				<button class="userBtn w-500 ma-t-px5" type="button" onclick="location.href='/'">메인으로</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- footer 불러오기 -->
+	<th:block th:include="common/footer"></th:block>
+</body>
+
+</html>

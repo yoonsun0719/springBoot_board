@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PetShop</title>
+
+<th:block th:include="common/header/commonHead"></th:block>
+<th:block th:include="common/header/userHead"></th:block>
+
+<!-- windi CSS -->
+<script src="https://unpkg.com/windicss-runtime-dom"></script>
+
+<!-- TailWindCss -->
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="listATag indexMenu">
+	<div th:if="${session.user_nickname == null}" style=" margin:20px 0px 0px 20px"><a href="user/user?pageName=Login" class='px-6 py-2 border border-blue-500 font-medium text-sm hover:bg-blue-600 hover:text-blue-100 text-blue-600 rounded' style="text-decoration:none;"> 로그인 </a></div>
+	<div th:if="${session.user_nickname != null}" style=" margin:20px 0px 0px 20px"><a href="user/logOut.do" class='px-6 py-2 border border-red-500 font-medium text-sm hover:bg-red-600 hover:text-red-100 text-red-600 rounded' style="text-decoration:none;"> 로그아웃</a></div>
+	<div th:if="${session.user_nickname == null}" style=" margin:20px 0px 0px 20px"><a href="user/user?pageName=Register" class='px-6 py-2 border border-blue-500 font-medium text-sm hover:bg-blue-600 hover:text-blue-100 text-blue-600 rounded' style="text-decoration:none;"> 회원가입 </a></div>
+	<div th:if="${session.user_nickname != null}" style=" margin:20px 0px 0px 20px"><a href="board/board?pageName=Insert" class='px-6 py-2 border border-blue-500 font-medium text-sm hover:bg-blue-600 hover:text-blue-100 text-blue-600 rounded' style="text-decoration:none;"> 게시판 </a></div>
+	<div th:if="${session.user_nickname != null}" style=" margin:20px 0px 0px 20px"><a href="board/boardList" class='px-6 py-2 border border-blue-500 font-medium text-sm hover:bg-blue-600 hover:text-blue-100 text-blue-600 rounded' style="text-decoration:none;"> 게시판목록</a></div>
+<!-- 	<div th:if="${session.user_nickname == null}"><a href="board/board?pageName=List">게시판목록</a></div> -->
+	<div style=" margin:20px 0px 0px 20px">
+	<button class="test px-6 py-2 border border-yellow-500 font-medium text-sm hover:bg-yellow-600 hover:text-yellow-100 text-yellow-600 rounded">팝업오픈</button>
+	<button class="confirmTest px-6 py-2 border border-yellow-500 font-medium text-sm hover:bg-yellow-600 hover:text-yellow-100 text-yellow-600 rounded">확인팝업오픈</button>
+	</div>
+	
+	<!-- <div th:if="${session.user_nickname == null}" id="kakaoLoginBtn"> -->
+	
+	<div th:if= "${session.oauth == null}" style=" margin:20px 0px 0px 20px">
+		<a href="https://kauth.kakao.com/oauth/authorize?client_id=4cf0f2697c4d4da3d92fd94cda7f307c&redirect_uri=http://localhost:8080/user/kakaoLogin&response_type=code">
+			<img src="images/kakaoLogin.png" style="width: 230px; height: 40px;"/>
+		</a>
+	<!-- 	<input class="w-400" type="text" id='board_writer' th:value="${session.oauth}" readonly="readonly" >  -->
+	</div>
+</body>
+</html>

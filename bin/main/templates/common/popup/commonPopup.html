@@ -1,0 +1,21 @@
+<div class="popupBlurArea">
+	<div class="popupArea">
+		<div class="popupHeader">
+			<div class="popupTitle" th:t ext=${title}></div>
+			<div class="popupCloseBtn">X</div>
+		</div>
+		<div class="popupContent">
+			<div class="popupMsg" th:text=${msg}></div>
+		</div>
+		<div class="popupCloseBtn popupCheckBtn">확인</div>
+	</div>
+	
+	<script type="text/javascript">
+		// 팝업 닫기
+		$('.popupCloseBtn').on('click', () => {
+			$('.popupBlurArea').remove()
+		})
+	</script>
+</div>
+
+

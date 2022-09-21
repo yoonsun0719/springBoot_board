@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시글 수정</title>
+
+<th:block th:include="common/header/commonHead"></th:block>
+<th:block th:include="common/header/boardHead"></th:block>
+<!-- include 링크 잊지말기 -->
+
+</head>
+<body>
+	<!-- test -->
+	<div class="userArea">
+		<div class="borderSet ma-t-p30 h-500" th:each="i : ${boardRead}">
+		<input id="board_id" type="hidden" th:value="${i.boardId}">
+			<div class="row">
+				<div class="userLabel">작성자</div>
+				<div>
+					<input class="w-400" type="text" id='board_writer' name='board_writer' th:value="${session.user_nickname}" readonly="readonly">
+				</div>
+			</div>
+			<div class="row">
+				<div class="userLabel">제목</div>
+				<div>
+					<input class="w-400" type="text" id='board_title' name='board_title' th:value='${i.boardTitle}'>
+				</div>
+			</div>
+			<div class="row">
+				<div class="userLabel">내용</div>
+				<div>
+					<textarea rows="15" cols="50" class="w-400 " type="text" id='board_content' name='board_content' th:text='${i.boardContent}'></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<button class="userBtn w-500 ma-t-px50" id="updateBtn" type="button">수정</button>
+	</div>
+	<div class="row">
+		<button class="userBtn w-500 ma-t-px5" type="button" onclick="location.href='/'">수정취소</button>
+	</div>
+</body>
+</html>

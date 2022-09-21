@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판리스트</title>
+
+<th:block th:include="common/header/commonHead"></th:block>
+<th:block th:include="common/header/boardHead"></th:block>
+
+<!-- 부트스트랩 css -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+	<br/>
+	<!-- 검색 전, 출력 리스트 -->
+	<div style="flex-direction: column;" >			
+		<div class="centerSet table table-hover">
+		<div >
+		<h2 scope="row"> 게시판 </h2>
+		<!-- 게시글 검색 -->
+		<div  style="margin: 0 auto ;">
+			<div >
+				<select id="searchType" name="type" class="w-100 ">
+					<option value="1" >작성자</option>
+					<option value="2">제목</option>
+					<option value="3">내용</option>
+				</select>
+				<input type="text" id="searchData" name="searchData" class="w-300"/>
+				<button id="searchBtn" class="ma-lr-px10">검색</button>
+				<br/><br/>
+			</div>
+		</div>
+		<!--  -->
+			<div id="boardList" class="w-800 table table-hover" >
+			<div class="leftSet flexSet listTopLine titleContainer">
+				<div scope="col"><b>제목</b></div>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div scope="col" >작성일</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div scope="col">조회수</div>
+			</div>
+			<hr/>
+				<div th:each="b : ${boardList}" id="boardList_2">
+					<div class="leftSet flexSet listATag">
+						<a th:href = "@{/board/boardRead?edit=0&(boardId=${b.boardId})}" >
+							<div th:text="${b.boardTitle}" class="listTitle_2 ma-lr-px10"></div>
+						</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div th:text="${b.board_reg_date}"  class="boardListDate"></div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div th:text="${b.board_see}" class="boardListDate"></div>
+					</div>
+					<hr /> 
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		</div>
+	<br/>
+	
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판리스트</title>
+
+<th:block th:include="common/header/commonHead"></th:block>
+<th:block th:include="common/header/boardHead"></th:block>
+
+</head>
+<body>
+	<br/>
+	검색 전, 출력 리스트
+	<div style="flex-direction: column;" >			
+		<div class="centerSet">
+		<div class="content w-950">
+		<p class="listMainTitle"> 게시판 </p>
+		게시글 검색
+		<div class="centerSet" style="margin: 0 auto ;">
+			<div class="content centerSet">
+				<select id="searchType" name="type" class="w-100 ">
+					<option value="1" >작성자</option>
+					<option value="2">제목</option>
+					<option value="3">내용</option>
+				</select>
+				&nbsp;<input type="text" id="searchData" name="searchData" class="w-300"/>
+				<button id="searchBtn" class="ma-lr-px10">검색</button>
+			</div>
+		</div>
+		
+			<div id="boardList" class=" w-800">
+			<div class="leftSet flexSet listTopLine titleContainer">
+				<div class="listTitle ma-lr-px10 item_1"><b>제목</b></div>
+				<div class="listTitle ma-lr-px10 item_2" >작성일</div>
+				<div class="boardListTitleDate">조회수</div>
+			</div>
+			<hr/>
+				<div th:each="b : ${boardList}" id="boardList_2">
+					<div class="leftSet flexSet listATag">
+						<a th:href = "@{/board/boardRead?edit=0&(boardId=${b.boardId})}" >
+							<div th:text="${b.boardTitle}" class="listTitle_2 ma-lr-px10"></div>
+						</a>
+						<div th:text="${b.board_reg_date}"  class="boardListDate"></div>
+						<div th:text="${b.board_see}" class="boardListDate"></div>
+					</div>
+					<hr /> 
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		</div>
+	<br/>
+	
+</body>
+</html>
+ -->

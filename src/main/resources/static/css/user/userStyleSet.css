@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+:root { --main-color: #ff8c00; }
+
+.userBody {background-color: #dfdfdf}
+.userArea {margin: auto; width: 620px; display: flex; justify-content: center; background-color: #fff; border-radius: 10px; min-width: 620px;}
+.userLabel {width: 110px; font-weight: bold; margin: 0 50px 0 0;}
+.userRadio {width: 320px; height: 30px; border: 1px solid var(--main-color); border-radius: 10px;}
+.userRadio:hover{background-color: #ffecd5;}
+.userBtn {outline: none; font-weight: bold; text-align: center; border-radius: 10px; border: 1px solid var(--main-color);}
+.userBtn:hover {background-color: #ffecd5;}
